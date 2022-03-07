@@ -67,6 +67,14 @@ def showtransf(A,tlop,nshowop=2,pre="A=",post="=D"):
     else:
       show(pre,A,*lT,post)
     
+def printlop(llop,nshowop=2):
+    if len(llop)>nshowop:
+      print("lop=["+"".join([str(llop.pop(0))+"," for x in range(nshowop)])+"\\")
+      while len(llop)>nshowop:
+        print("".join([str(llop.pop(0))+"," for x in range(nshowop)])+"\\")
+      print("".join([str(o)+"," for o in llop])+"]")
+    else:
+      print("lop=["+"".join([str(o)+"," for o in llop])+"]")
 
 def inv(o):
     n=len(o)

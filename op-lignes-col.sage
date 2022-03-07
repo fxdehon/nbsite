@@ -25,6 +25,20 @@ def showop(o): # affichage d'une liste d'opérations
         l=l+[Arrow]
     return(l)
 
+def tradop(o):
+    lop=[]
+    for op in o:
+        if op[0]==1:lop=lop+[[9-2*len(op)]+op[1:]]
+        elif op[0]==0:lop=lop+[[10-2*len(op)]+op[1:]]
+    return(lop)
+    
+def tradnop(o):
+	lop=[]
+	for op in o:
+		if op[0]%2==1:lop=lop+[[1]+op[1:]]
+		else:lop=lop+[[0]+op[1:]]
+	return(lop)
+
 def lshowtransf(A,o):
     B=copy.deepcopy(A) #sinon A est modifié
     l=[]

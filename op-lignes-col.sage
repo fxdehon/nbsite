@@ -25,7 +25,7 @@ def showop(o): # affichage d'une liste d'opérations
         l=l+[Arrow]
     return(l)
 
-def showtransf(A,o):
+def lshowtransf(A,o):
     B=copy.deepcopy(A) #sinon A est modifié
     l=[]
     for op in o:
@@ -57,6 +57,16 @@ def showtransf(A,o):
         l=l+[Arrow+latex(C)]
         B=C
     return(l)
+
+def showtransf(A,tlop,nshowop=2,pre="A=",post="=D"):
+    lT=lshowtransf(A,tlop)
+    if len(lT)>nshowop-1:
+		show(pre,A,*[lT.pop(0) for x in range(nshowop)])
+		while len(lT)>nshowop-1:show(*[lT.pop(0) for x in range(nshowop)])
+		show(*lT,post)
+	else:
+		show(pre,A,*lT,post)
+    
 
 def inv(o):
     n=len(o)

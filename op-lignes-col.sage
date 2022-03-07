@@ -64,7 +64,7 @@ def showtransf(A,tlop,nshowop=2,pre="A=",post="=D"):
 		show(pre,A,*[lT.pop(0) for x in range(nshowop)])
 		while len(lT)>nshowop-1:show(*[lT.pop(0) for x in range(nshowop)])
 		show(*lT,post)
-	else:
+    else:
 		show(pre,A,*lT,post)
     
 

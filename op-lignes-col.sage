@@ -60,9 +60,9 @@ def lshowtransf(A,o):
 
 def showtransf(A,tlop,nshowop=2,pre="A=",post="=D"):
     lT=lshowtransf(A,tlop)
-    if len(lT)>nshowop-1:
+    if len(lT)>nshowop:
       show(pre,A,*[lT.pop(0) for x in range(nshowop)])
-      while len(lT)>nshowop-1:show(*[lT.pop(0) for x in range(nshowop)])
+      while len(lT)>nshowop:show(*[lT.pop(0) for x in range(nshowop)])
       show(*lT,post)
     else:
       show(pre,A,*lT,post)

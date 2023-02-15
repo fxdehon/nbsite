@@ -137,7 +137,7 @@ def fsmith(A):
 
 def ech_col(A): # 15fev23
     p=A.nrows();q=A.ncols()
-    if p*q==0 or max(L)==0:
+    if p*q==0:
         return([])
     else:
        	o=fsmith(A.submatrix(0,0,1))

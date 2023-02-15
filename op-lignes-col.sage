@@ -3,6 +3,7 @@
 #fsmith modifié le 23 mars 2021 : opérations triviales éliminées.
 #showtransf créé le 15 mai 2021
 #showop modifié le 18 mai 2021
+#ech_col créé le 15 février 2023
 
 import copy #B=copy.deepcopy(A)
 

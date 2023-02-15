@@ -135,10 +135,10 @@ def fsmith(A):
                    [1,j1+1,j0+1,-(((1-A[i1][j0]//a)*A[i0][j1]+b)//a)]]
             return(o+fsmith(transf(A,o)))
 
-def ech-col(A):
+def ech_col(A):
     p=A.nrows();q=A.ncols()
     if p*q==0 or max(L)==0:
         return([])
     else:
 	o=fsmith(A.submatrix(0,0,1))
-	return(o+[[op[0],1+op[1],1+op[2]]+op[3:] for op in ech-col(transf(A,o).submatrix(1,1))])
+	return(o+[[op[0],1+op[1],1+op[2]]+op[3:] for op in ech_col(transf(A,o).submatrix(1,1))])

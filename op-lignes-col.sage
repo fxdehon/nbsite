@@ -4,6 +4,7 @@
 #showtransf créé le 15 mai 2021
 #showop modifié le 18 mai 2021
 #ech_col créé le 15 février 2023
+#Affichage des opérations comme règle de réécriture C_i -> transf(C_i) plutôt que transf(C_i) -> C_i 13 mars 2024 
 
 import copy #B=copy.deepcopy(A)
 
@@ -19,8 +20,8 @@ def showop(o): # affichage d'une liste d'opérations
             else:
                 plus="-"
                 if a!=-1:plus=plus+str(abs(a))
-        if t==1:Arrow="C"+str(i)+plus+"C"+str(j)+" → C"+str(i)
-        elif t==2:Arrow="L"+str(i)+plus+"L"+str(j)+" → L"+str(i)
+        if t==1:Arrow="C"+str(i)+" → C"+str(i)+plus+"C"+str(j)
+        elif t==2:Arrow="L"+str(i)+" → L"+str(i)+plus+"L"+str(j)
         elif t==3:Arrow="C"+str(i)+" ↔ C"+str(j)
         elif t==4:Arrow="L"+str(i)+" ↔ L"+str(j)
         l=l+[Arrow]
@@ -56,11 +57,11 @@ def lshowtransf(A,o):
         if t==1:
             C=B.with_added_multiple_of_column(i-1,j-1,a)
             Arrow=LatexExpr(r"\xrightarrow[C_{"+str(i)\
-                  +r"}"+plus+r"C_{"+str(j)+r"}\to C_{"+str(i)+r"}]{}")
+                  +r"}\to C_{"+str(i)+r"}"+plus+r"C_{"+str(j)+r"}]{}")
         elif t==2:
             C=B.with_added_multiple_of_row(i-1,j-1,a)
             Arrow=LatexExpr(r"\xrightarrow[L_{"+str(i)\
-                  +r"}"+plus+r"L_{"+str(j)+r"}\to L_{"+str(i)+r"}]{}")
+                  +r"}\to L_{"+str(i)+r"}"+plus+r"L_{"+str(j)+r"}]{}")
         elif t==3:
             C=B.with_swapped_columns(i-1,j-1)
             Arrow=LatexExpr(r"\xrightarrow[C_{"+str(i)\
